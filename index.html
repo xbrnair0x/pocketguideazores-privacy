@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket Guide Azores - Politica de Privacidade</title>
+    <title>Pocket Guide Azores - Privacy Policy / Politica de Privacidade</title>
     <style>
         * {
             margin: 0;
@@ -33,6 +33,35 @@
         header p {
             font-size: 1rem;
             opacity: 0.9;
+        }
+
+        .lang-switcher {
+            text-align: center;
+            padding: 16px;
+            background: #e8f4fd;
+        }
+
+        .lang-switcher button {
+            padding: 8px 24px;
+            margin: 0 8px;
+            border: 2px solid #2e86c1;
+            border-radius: 20px;
+            background: white;
+            color: #2e86c1;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-switcher button.active {
+            background: #2e86c1;
+            color: white;
+        }
+
+        .lang-switcher button:hover {
+            background: #2e86c1;
+            color: white;
         }
 
         .container {
@@ -108,6 +137,9 @@
             font-size: 0.9rem;
         }
 
+        .lang-en { display: none; }
+        .lang-pt { display: block; }
+
         @media (max-width: 600px) {
             header h1 {
                 font-size: 1.5rem;
@@ -123,10 +155,17 @@
 
 <header>
     <h1>Pocket Guide Azores</h1>
-    <p>Politica de Privacidade</p>
+    <p class="lang-pt">Politica de Privacidade</p>
+    <p class="lang-en">Privacy Policy</p>
 </header>
 
-<div class="container">
+<div class="lang-switcher">
+    <button id="btn-pt" class="active" onclick="switchLang('pt')">Portugues</button>
+    <button id="btn-en" onclick="switchLang('en')">English</button>
+</div>
+
+<!-- ===================== PORTUGUES ===================== -->
+<div class="container lang-pt">
 
     <div class="card">
         <h2>1. Introducao</h2>
@@ -144,28 +183,28 @@
         <p>Quando cria uma conta, recolhemos:</p>
         <ul>
             <li>Nome</li>
-            <li>Endereco de email</li>
+            <li>Endereco de correio eletronico</li>
             <li>Palavra-passe (armazenada de forma encriptada)</li>
-            <li>Foto de perfil (opcional)</li>
+            <li>Fotografia de perfil (opcional)</li>
             <li>Idioma e pais de preferencia</li>
         </ul>
 
         <h3>2.2 Autenticacao por terceiros</h3>
-        <p>Se optar por iniciar sessao atraves do Google, recebemos o seu nome, email e foto de perfil associados a essa conta. Nao temos acesso a sua palavra-passe do Google.</p>
+        <p>Se optar por iniciar sessao atraves do Google, recebemos o seu nome, correio eletronico e fotografia de perfil associados a essa conta. Nao temos acesso a sua palavra-passe do Google.</p>
 
         <h3>2.3 Dados de localizacao</h3>
         <p>A aplicacao solicita acesso a sua localizacao para:</p>
         <ul>
             <li>Mostrar paragens de autocarro proximas</li>
             <li>Calcular rotas e direcoes</li>
-            <li>Personalizar itinerarios com base na sua posicao</li>
+            <li>Personalizar roteiros com base na sua posicao</li>
         </ul>
         <div class="highlight">
             A localizacao so e utilizada enquanto a aplicacao esta em uso. Nao rastreamos a sua localizacao em segundo plano.
         </div>
 
         <h3>2.4 Preferencias de viagem</h3>
-        <p>Para personalizar os itinerarios, recolhemos:</p>
+        <p>Para personalizar os roteiros, recolhemos:</p>
         <ul>
             <li>Ilha de destino</li>
             <li>Categorias de atividades preferidas</li>
@@ -179,7 +218,7 @@
         <h3>2.5 Dados de utilizacao</h3>
         <p>Recolhemos informacoes sobre como utiliza a aplicacao, incluindo:</p>
         <ul>
-            <li>Itinerarios guardados e modificados</li>
+            <li>Roteiros guardados e modificados</li>
             <li>Eventos consultados</li>
             <li>Interacoes com o mapa</li>
         </ul>
@@ -189,7 +228,7 @@
         <h2>3. Como utilizamos os seus dados</h2>
         <p>Os seus dados sao utilizados exclusivamente para:</p>
         <ul>
-            <li><strong>Personalizacao:</strong> Gerar itinerarios adaptados as suas preferencias</li>
+            <li><strong>Personalizacao:</strong> Gerar roteiros adaptados as suas preferencias</li>
             <li><strong>Funcionalidade:</strong> Fornecer direcoes, mostrar pontos de interesse e paragens proximas</li>
             <li><strong>Conta:</strong> Gerir a sua conta e manter as suas preferencias entre sessoes</li>
             <li><strong>Melhoria:</strong> Melhorar a qualidade do servico e a experiencia do utilizador</li>
@@ -205,7 +244,7 @@
         <ul>
             <li><strong>Google Sign-In:</strong> Para autenticacao. Consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politica de Privacidade do Google</a>.</li>
             <li><strong>Mapbox:</strong> Para visualizacao de mapas. Consulte a <a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noopener">Politica de Privacidade do Mapbox</a>.</li>
-            <li><strong>OSRM:</strong> Para calculo de rotas (servico open-source, sem recolha de dados pessoais).</li>
+            <li><strong>OSRM:</strong> Para calculo de rotas (servico de codigo aberto, sem recolha de dados pessoais).</li>
         </ul>
     </div>
 
@@ -214,7 +253,7 @@
         <p>Levamos a seguranca dos seus dados a serio:</p>
         <ul>
             <li>Os tokens de autenticacao sao armazenados localmente utilizando <strong>armazenamento seguro encriptado</strong> no seu dispositivo</li>
-            <li>Todas as comunicacoes com o nosso servidor sao feitas atraves de <strong>HTTPS</strong> (encriptacao SSL/TLS)</li>
+            <li>Todas as comunicacoes com o nosso servidor sao efetuadas atraves de <strong>HTTPS</strong> (encriptacao SSL/TLS)</li>
             <li>As palavras-passe sao armazenadas de forma encriptada e nunca em texto simples</li>
             <li>Nao armazenamos dados de pagamento no nosso servidor</li>
         </ul>
@@ -228,7 +267,7 @@
             <li><strong>Retificacao:</strong> Corrigir dados imprecisos ou incompletos</li>
             <li><strong>Eliminacao:</strong> Solicitar a eliminacao dos seus dados ("direito a ser esquecido")</li>
             <li><strong>Portabilidade:</strong> Receber os seus dados num formato estruturado</li>
-            <li><strong>Oposicao:</strong> Opor-se ao tratamento dos seus dados em certas circunstancias</li>
+            <li><strong>Oposicao:</strong> Opor-se ao tratamento dos seus dados em determinadas circunstancias</li>
             <li><strong>Limitacao:</strong> Solicitar a limitacao do tratamento dos seus dados</li>
         </ul>
         <p>Para exercer qualquer um destes direitos, contacte-nos atraves dos meios indicados abaixo.</p>
@@ -246,12 +285,148 @@
 
     <div class="card">
         <h2>9. Alteracoes a esta politica</h2>
-        <p>Podemos atualizar esta Politica de Privacidade periodicamente. Quaisquer alteracoes significativas serao comunicadas atraves da aplicacao ou por email. A data da ultima atualizacao sera sempre indicada no topo desta pagina.</p>
+        <p>Podemos atualizar esta Politica de Privacidade periodicamente. Quaisquer alteracoes significativas serao comunicadas atraves da aplicacao ou por correio eletronico. A data da ultima atualizacao sera sempre indicada no topo desta pagina.</p>
     </div>
 
     <div class="card">
         <h2>10. Contacto</h2>
         <p>Se tiver questoes ou preocupacoes sobre esta Politica de Privacidade ou sobre o tratamento dos seus dados, pode contactar-nos:</p>
+        <div class="contact-info">
+            <p><strong>Pocket Guide Azores</strong></p>
+            <p>Correio eletronico: <a href="mailto:privacy@pocketguideazores.com">privacy@pocketguideazores.com</a></p>
+            <p>Website: <a href="https://pocketguideazores.com" target="_blank" rel="noopener">pocketguideazores.com</a></p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================== ENGLISH ===================== -->
+<div class="container lang-en">
+
+    <div class="card">
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy describes how the <strong>Pocket Guide Azores</strong> application ("we", "our" or "application") collects, uses, stores and protects the personal information of its users ("you" or "user").</p>
+        <p>By using our application, you agree to the practices described in this policy. If you do not agree, please do not use the application.</p>
+        <div class="highlight">
+            <strong>Last updated:</strong> 15 March 2026
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>2. Data we collect</h2>
+
+        <h3>2.1 Account data</h3>
+        <p>When you create an account, we collect:</p>
+        <ul>
+            <li>Name</li>
+            <li>Email address</li>
+            <li>Password (stored in encrypted form)</li>
+            <li>Profile photo (optional)</li>
+            <li>Language and country preference</li>
+        </ul>
+
+        <h3>2.2 Third-party authentication</h3>
+        <p>If you choose to sign in through Google, we receive your name, email and profile photo associated with that account. We do not have access to your Google password.</p>
+
+        <h3>2.3 Location data</h3>
+        <p>The application requests access to your location to:</p>
+        <ul>
+            <li>Show nearby bus stops</li>
+            <li>Calculate routes and directions</li>
+            <li>Personalise itineraries based on your position</li>
+        </ul>
+        <div class="highlight">
+            Location is only used while the application is in use. We do not track your location in the background.
+        </div>
+
+        <h3>2.4 Travel preferences</h3>
+        <p>To personalise itineraries, we collect:</p>
+        <ul>
+            <li>Destination island</li>
+            <li>Preferred activity categories</li>
+            <li>Budget level</li>
+            <li>Group composition (adults and children)</li>
+            <li>Trip duration</li>
+            <li>Vehicle availability</li>
+            <li>Weather preferences</li>
+        </ul>
+
+        <h3>2.5 Usage data</h3>
+        <p>We collect information about how you use the application, including:</p>
+        <ul>
+            <li>Saved and modified itineraries</li>
+            <li>Events viewed</li>
+            <li>Map interactions</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>3. How we use your data</h2>
+        <p>Your data is used exclusively for:</p>
+        <ul>
+            <li><strong>Personalisation:</strong> Generating itineraries tailored to your preferences</li>
+            <li><strong>Functionality:</strong> Providing directions, showing points of interest and nearby stops</li>
+            <li><strong>Account:</strong> Managing your account and maintaining your preferences between sessions</li>
+            <li><strong>Improvement:</strong> Improving service quality and user experience</li>
+        </ul>
+        <div class="highlight">
+            <strong>We do not sell, share or transfer your personal data to third parties for marketing or advertising purposes.</strong>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>4. Third-party services</h2>
+        <p>The application uses the following third-party services:</p>
+        <ul>
+            <li><strong>Google Sign-In:</strong> For authentication. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
+            <li><strong>Mapbox:</strong> For map display. See <a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noopener">Mapbox's Privacy Policy</a>.</li>
+            <li><strong>OSRM:</strong> For route calculation (open-source service, no personal data collection).</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>5. Storage and security</h2>
+        <p>We take the security of your data seriously:</p>
+        <ul>
+            <li>Authentication tokens are stored locally using <strong>encrypted secure storage</strong> on your device</li>
+            <li>All communications with our server are made via <strong>HTTPS</strong> (SSL/TLS encryption)</li>
+            <li>Passwords are stored in encrypted form and never in plain text</li>
+            <li>We do not store payment data on our server</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>6. Your rights (GDPR)</h2>
+        <p>In accordance with the General Data Protection Regulation (GDPR) of the European Union, you have the right to:</p>
+        <ul>
+            <li><strong>Access:</strong> Request a copy of your personal data</li>
+            <li><strong>Rectification:</strong> Correct inaccurate or incomplete data</li>
+            <li><strong>Erasure:</strong> Request the deletion of your data ("right to be forgotten")</li>
+            <li><strong>Portability:</strong> Receive your data in a structured format</li>
+            <li><strong>Objection:</strong> Object to the processing of your data in certain circumstances</li>
+            <li><strong>Restriction:</strong> Request the restriction of processing of your data</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the details provided below.</p>
+    </div>
+
+    <div class="card">
+        <h2>7. Data retention</h2>
+        <p>We retain your personal data for as long as your account remains active. If you request the deletion of your account, all associated personal data will be deleted within <strong>30 days</strong>, except where retention is required by law.</p>
+    </div>
+
+    <div class="card">
+        <h2>8. Children</h2>
+        <p>The application is not intended for children under 13 years of age. We do not knowingly collect data from children under 13. If we become aware that data has been collected from a minor without parental consent, we will proceed with its deletion.</p>
+    </div>
+
+    <div class="card">
+        <h2>9. Changes to this policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any significant changes will be communicated through the application or by email. The date of the last update will always be shown at the top of this page.</p>
+    </div>
+
+    <div class="card">
+        <h2>10. Contact</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or the processing of your data, you may contact us:</p>
         <div class="contact-info">
             <p><strong>Pocket Guide Azores</strong></p>
             <p>Email: <a href="mailto:privacy@pocketguideazores.com">privacy@pocketguideazores.com</a></p>
@@ -262,8 +437,30 @@
 </div>
 
 <footer>
-    <p>&copy; 2026 Pocket Guide Azores. Todos os direitos reservados.</p>
+    <p class="lang-pt">&copy; 2026 Pocket Guide Azores. Todos os direitos reservados.</p>
+    <p class="lang-en">&copy; 2026 Pocket Guide Azores. All rights reserved.</p>
 </footer>
+
+<script>
+    function switchLang(lang) {
+        var ptElements = document.querySelectorAll('.lang-pt');
+        var enElements = document.querySelectorAll('.lang-en');
+        var btnPt = document.getElementById('btn-pt');
+        var btnEn = document.getElementById('btn-en');
+
+        if (lang === 'en') {
+            for (var i = 0; i < ptElements.length; i++) { ptElements[i].style.display = 'none'; }
+            for (var j = 0; j < enElements.length; j++) { enElements[j].style.display = 'block'; }
+            btnEn.classList.add('active');
+            btnPt.classList.remove('active');
+        } else {
+            for (var i = 0; i < ptElements.length; i++) { ptElements[i].style.display = 'block'; }
+            for (var j = 0; j < enElements.length; j++) { enElements[j].style.display = 'none'; }
+            btnPt.classList.add('active');
+            btnEn.classList.remove('active');
+        }
+    }
+</script>
 
 </body>
 </html>
